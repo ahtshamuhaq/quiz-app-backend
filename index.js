@@ -26,6 +26,9 @@ app.use(express.json());
 app.use("/api/worksheets", worksheetRoutes);
 
 const PORT = process.env.PORT || 5000;
+app.get("/", (req, res) => {
+  res.json({ message: "Backend server is running!" });
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
